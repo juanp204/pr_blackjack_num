@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Interpolación de Cartas</title>
+    <!-- Agrega los enlaces a los archivos CSS y JavaScript de Bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+
+<body>
+    <div class="container mt-5">
+        <h1>Interpolación de Cartas</h1>
+        <form>
+            <div class="form-group">
+                <label for="carta1">Selecciona la primera carta:</label>
+                <select class="form-control" id="carta1">
+                    <option value="1">Treboles</option>
+                    <option value="2">Picas</option>
+                    <option value="3">Corazones</option>
+                    <option value="4">Diamantes</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="carta2">Selecciona la segunda carta:</label>
+                <select class="form-control" id="carta2">
+                    <option value="1">Treboles</option>
+                    <option value="2">Picas</option>
+                    <option value="3">Corazones</option>
+                    <option value="4">Diamantes</option>
+                </select>
+            </div>
+            <button type="button" class="btn btn-primary" onclick="interpolacionCartas()">Calcular
+                Interpolación</button>
+        </form>
+        <div class="mt-4" id="resultadoInterpolacion"></div>
+    </div>
+
+    <!-- Agrega el enlace al archivo JavaScript -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.min.js"></script>
+    <script>
+        function interpolacionCartas() {
+            const carta1 = parseInt(document.getElementById('carta1').value);
+            const carta2 = parseInt(document.getElementById('carta2').value);
+            const fraccion = 2; // Interpolación lineal en el punto medio (0.5).
+
+            const valorInterpolado = carta1 + (carta2 - carta1) * fraccion;
+
+            const interpolacion = `Interpolación: = ${valorInterpolado}`;
+
+            document.getElementById('resultadoInterpolacion').innerHTML = interpolacion;
+        }
+    </script>
+</body>
+
+</html>
