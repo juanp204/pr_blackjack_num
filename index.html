@@ -9,30 +9,36 @@
 
 <body>
     <div class="container mt-5">
-        <h1>Interpolación de Cartas</h1>
-        <form>
-            <div class="form-group">
-                <label for="carta1">Selecciona la primera carta:</label>
-                <select class="form-control" id="carta1">
-                    <option value="1">Treboles</option>
-                    <option value="2">Picas</option>
-                    <option value="3">Corazones</option>
-                    <option value="4">Diamantes</option>
-                </select>
+        <h1 class="text-center">Interpolación de Cartas</h1>
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <form>
+                    <div class="form-group">
+                        <label for="carta1">Selecciona la primera carta:</label>
+                        <select class="form-control" id="carta1">
+                            <option value="1">Treboles</option>
+                            <option value="2">Picas</option>
+                            <option value="3">Corazones</option>
+                            <option value="4">Diamantes</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="carta2">Selecciona la segunda carta:</label>
+                        <select class="form-control" id="carta2">
+                            <option value="1">Treboles</option>
+                            <option value="2">Picas</option>
+                            <option value="3">Corazones</option>
+                            <option value="4">Diamantes</option>
+                        </select>
+                    </div>
+                    <button type="button" class="btn btn-primary btn-block" onclick="interpolacionCartas()">Calcular
+                        Interpolación</button>
+                </form>
             </div>
-            <div class="form-group">
-                <label for="carta2">Selecciona la segunda carta:</label>
-                <select class="form-control" id="carta2">
-                    <option value="1">Treboles</option>
-                    <option value="2">Picas</option>
-                    <option value="3">Corazones</option>
-                    <option value="4">Diamantes</option>
-                </select>
-            </div>
-            <button type="button" class="btn btn-primary" onclick="interpolacionCartas()">Calcular
-                Interpolación</button>
-        </form>
-        <div class="mt-4" id="resultadoInterpolacion"></div>
+        </div>
+        <div class="row justify-content-center mt-4">
+            <div class="col-md-6" id="resultadoInterpolacion"></div>
+        </div>
     </div>
 
     <!-- Agrega el enlace al archivo JavaScript -->
@@ -46,7 +52,7 @@
 
             const valorInterpolado = carta1 + (carta2 - carta1) * fraccion;
 
-            const interpolacion = `Interpolación: = ${valorInterpolado}`;
+            const interpolacion = `Interpolación: (${carta1},${carta1}) y (${carta2},${carta2}) = ${valorInterpolado}`;
 
             document.getElementById('resultadoInterpolacion').innerHTML = interpolacion;
         }
